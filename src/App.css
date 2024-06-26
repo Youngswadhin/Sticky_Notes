@@ -219,3 +219,20 @@ nav {
   cursor: pointer;
   -webkit-user-drag: none;
 }
+
+
+@media (max-width: 768px) {
+  .heading {
+      font-size: 14rem; 
+      top: 60%; 
+      left: 1%;
+      /* width: 0vw; */
+      /* text-align: center; */
+  }
+  .input-box {
+    position: relative;
+    margin-top: 50%;
+    width: 100%;
+    
+  }
+}
