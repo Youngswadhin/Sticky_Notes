@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { gsap } from 'gsap';
 import noteIcon from './note.png';
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
   useEffect(() => {
     const head = "Sticky Notes";
     const header = document.querySelector('.head');
-    header.innerHTML = ''; 
+    header.innerHTML = '';
     const value = head.split('');
     
     value.forEach((data) => {
@@ -20,31 +19,6 @@ function App() {
       spanElement.classList.add('spanel');
       header.appendChild(spanElement);
     });
-
-    // gsap.from('.heading', {
-    //   color: 'black',
-    //   scale: 5,
-    //   duration: 1,
-    //   ease: 'expo.in',
-    // });
-
-    // const tl = gsap.timeline();
-    // tl.from('.spanel', {
-    //   y: 200,
-    //   duration: 2,
-    //   ease: 'bounce.in',
-    //   stagger: 0.03,
-    // });
-    // tl.from('.logo', {
-    //   rotation: 90,
-    //   duration: 1,
-    //   scale: 0.5,
-    //   opacity: 0,
-    // });
-    // gsap.from('.button', {
-    //   y: -100,
-    //   opacity: 0,
-    // });
   }, []);
 
   useEffect(() => {
@@ -81,7 +55,7 @@ function App() {
               {note.content}
             </div>
             <small>{note.timestamp}</small>
-            <img className="red" src="https://imgs.search.brave.com/A8yvL5i5o8kRW8qeseBGyG_BH8MlyiHOzOw-McOEP0c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTMvUmVk/LUNpcmNsZS5wbmc" alt="" onClick={() => deleteNote(index)} />
+            <img className="red" src="https://imgs.search.brave.com/A8yvL5i5o8kRW8qeseBGyG_BH8MlyiHOzOw-McOEP0c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTMvUmVk/LUNpcmNsZS5wbmc" alt="delete" onClick={() => deleteNote(index)} />
           </div>
         ))}
       </div>

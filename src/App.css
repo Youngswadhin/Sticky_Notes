@@ -22,13 +22,25 @@ body {
 }
 
 .heading {
-  position: fixed;
-  top: 50%;
-  z-index: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 10rem;
-  color: rgba(245, 245, 245, 0.449);
+    position: fixed;
+    top: 35%;
+    z-index: 0;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    color: rgba(245, 245, 245, 0.449);
+    font-weight: bold;
+    animation: zoomOut 1s ease forwards;
+ }
+ @keyframes zoomOut {
+  from {
+    transform: scale(5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .notes-container {
@@ -57,6 +69,17 @@ nav {
   padding: 0.8em 2em;
   background: var(--bg);
   transition: 0.2s;
+  animation: buttonAppear 1s ease forwards;
+}
+@keyframes buttonAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button:hover {
@@ -65,6 +88,37 @@ nav {
   background: var(--hover-bg);
   box-shadow: 0.25rem 0.25rem var(--bg);
 }
+.logo {
+  animation: rotateLogo 1s ease forwards 2s;
+  opacity: 0;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* @keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+} */
 
 .input-box:hover {
   transform: translate(-0.5rem, -0.5rem);
@@ -74,6 +128,11 @@ nav {
 .head {
   display: flex;
   overflow: hidden;
+  font-weight: bold;
+  font-size: 1.4rem;
+  /* white-space: nowrap; */
+  /* border-right: 0.15em solid orange; */
+  /* animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; */
 }
 
 .button:active {
@@ -104,6 +163,8 @@ nav {
   cursor: pointer;
   border: 1px solid black;
   border-radius: 50%;
+  -webkit-user-drag: none;
+
 }
 
 .data {
