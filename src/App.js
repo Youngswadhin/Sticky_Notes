@@ -11,9 +11,9 @@ function App() {
   useEffect(() => {
     const head = "Sticky Notes";
     const header = document.querySelector('.head');
-    header.innerHTML = ''; 
+    header.innerHTML = '';
     const value = head.split('');
-    
+
     value.forEach((data) => {
       let spanElement = document.createElement('div');
       spanElement.textContent = data;
@@ -77,6 +77,7 @@ function App() {
       <div className="notes-container">
         {notes.map((note, index) => (
           <div className="input-box" key={index}>
+            <span className="note-number">{index + 1}</span>
             <div contentEditable={true} suppressContentEditableWarning={true} onBlur={(e) => updateNote(index, e.target.innerText)}>
               {note.content}
             </div>

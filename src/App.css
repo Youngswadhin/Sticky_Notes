@@ -219,7 +219,17 @@ nav {
   cursor: pointer;
   -webkit-user-drag: none;
 }
-
+.note-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0.5;
+  font-size: 24px;
+  
+}
 
 @media (max-width: 768px) {
   .heading {
